@@ -1,0 +1,116 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #f2f2f2;
+  height: 100%;
+  margin: 0;
+  font-size: 14px;
+  background-color: #141518;
+}
+.im-left {
+  font-size: 13px;
+  line-height: 28px;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 20%);
+  position: fixed;
+  margin: 20px;
+  z-index: 10;
+  height: 30px;
+  padding-left: 15px;
+  background: url("https://s.imgur.com/images/access/back-to-imgur.png")
+    no-repeat;
+  cursor: pointer;
+  opacity: 0.9;
+}
+.im-left a {
+  color: #fff;
+  text-decoration: none;
+}
+.signin-cont {
+  position: relative;
+  width: 350px;
+  padding-top: 80px;
+  margin: auto;
+  z-index: 2;
+}
+.signin-logo {
+  position: relative;
+  display: block;
+  margin: 0 auto 90px;
+  width: 187px;
+  height: 65px;
+  background: url("https://s.imgur.com/images/access/access-logo.png") no-repeat;
+}
+.heading{
+    text-shadow: 1px 1px 0 rgb(0 0 0 / 80%);
+    font-size: 11px;
+    letter-spacing: .03em;
+    line-height: 28px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+.social-media{
+    border-radius: 5px;
+    box-shadow: 2px 2px 9px 3px rgb(0 0 0 / 20%);
+    background: #2C2F34;
+    padding: 12px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    /* padding: 0; */
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+}
+.fbs{
+    max-width: 86px;
+    width: 54px;
+    height: 27px;
+    padding-top: 8px;
+    transition: background-color .2s;
+    border-bottom: 5px solid;
+    cursor: pointer;
+    background: #212121;
+    border-radius: 5px;
+    /* margin-right: 10px; */
+    display: inline-block;
+    /* float: left; */
+    text-align: center !important;
+    color: #fff;
+    text-decoration: none;
+    
+    font-size: 21px;
+}
+.fb{
+  border-bottom-color: #3A558E !important;
+}
+.fb:hover{
+    background-color: #3A558E;
+}
+.tw{
+  border-bottom-color: #4099FF !important;
+}
+.tw:hover{
+  background-color: #4099FF;
+}
+.gg{
+  border-bottom-color: #4285F4 !important;
+}
+.gg:hover{
+  background-color: #4285F4;
+}
+.ap{
+  border-bottom-color: #fff !important;
+}
+.ap:hover{
+  background-color: #fff;
+}
+.yh{
+  border-bottom-color: #7B0099 !important;
+}
+.yh:hover{
+  background-color: #7B0099;
+}

@@ -39,78 +39,235 @@ body {
   height: 65px;
   background: url("https://s.imgur.com/images/access/access-logo.png") no-repeat;
 }
-.heading{
-    text-shadow: 1px 1px 0 rgb(0 0 0 / 80%);
-    font-size: 11px;
-    letter-spacing: .03em;
-    line-height: 28px;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
+.heading {
+  text-shadow: 1px 1px 0 rgb(0 0 0 / 80%);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  line-height: 28px;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
-.social-media{
-    border-radius: 5px;
-    box-shadow: 2px 2px 9px 3px rgb(0 0 0 / 20%);
-    background: #2C2F34;
-    padding: 12px;
-    display: flex;
-    justify-content: space-evenly;
-    margin: 0;
-    /* padding: 0; */
-    border: 0;
-    font: inherit;
-    vertical-align: baseline;
+.social-media {
+  border-radius: 5px;
+  box-shadow: 2px 2px 9px 3px rgb(0 0 0 / 20%);
+  background: #2c2f34;
+  padding: 12px;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0;
+  /* padding: 0; */
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
 }
-.fbs{
-    max-width: 86px;
-    width: 54px;
-    height: 27px;
-    padding-top: 8px;
-    transition: background-color .2s;
-    border-bottom: 5px solid;
-    cursor: pointer;
-    background: #212121;
-    border-radius: 5px;
-    /* margin-right: 10px; */
-    display: inline-block;
-    /* float: left; */
-    text-align: center !important;
-    color: #fff;
-    text-decoration: none;
-    
-    font-size: 21px;
+.fbs {
+  max-width: 86px;
+  width: 54px;
+  height: 27px;
+  padding-top: 8px;
+  transition: background-color 0.2s;
+  border-bottom: 5px solid;
+  cursor: pointer;
+  background: #212121;
+  border-radius: 5px;
+  /* margin-right: 10px; */
+  display: inline-block;
+  /* float: left; */
+  text-align: center !important;
+  color: #fff;
+  text-decoration: none;
+
+  font-size: 21px;
 }
-.fb{
-  border-bottom-color: #3A558E !important;
+.fb {
+  border-bottom-color: #3a558e !important;
 }
-.fb:hover{
-    background-color: #3A558E;
+.fb:hover {
+  background-color: #3a558e;
 }
-.tw{
-  border-bottom-color: #4099FF !important;
+.tw {
+  border-bottom-color: #4099ff !important;
 }
-.tw:hover{
-  background-color: #4099FF;
+.tw:hover {
+  background-color: #4099ff;
 }
-.gg{
-  border-bottom-color: #4285F4 !important;
+.gg {
+  border-bottom-color: #db3236 !important;
 }
-.gg:hover{
-  background-color: #4285F4;
+.gg:hover {
+  background-color: #db3236;
 }
-.ap{
+.ap {
   border-bottom-color: #fff !important;
 }
-.ap:hover{
-  background-color: #fff;
+.ap:hover {
+  background-color: rgb(189, 189, 189);
 }
-.yh{
-  border-bottom-color: #7B0099 !important;
+.yh {
+  border-bottom-color: #7b0099 !important;
 }
-.yh:hover{
-  background-color: #7B0099;
+.yh:hover {
+  background-color: #7b0099;
+}
+
+.faded-title {
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 2px 0;
+  color: #f2f2f2;
+}
+.span-1 {
+  background: url("https://s.imgur.com/images/access/fading-section-break.png")
+    no-repeat;
+  margin-right: 3px;
+  margin-left: 7px;
+  opacity: 0.7;
+  width: 129px;
+  height: 3px;
+  display: inline-block;
+}
+.faded-name {
+  text-shadow: 1px 1px 0 rgb(0 0 0 / 80%);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  line-height: 28px;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+}
+.span-2 {
+  margin: 0 0 2px 3px;
+  transform: rotate(180deg) translate(0, 2px);
+  opacity: 0.7;
+  width: 129px;
+  height: 3px;
+  display: inline-block;
+  background: url("https://s.imgur.com/images/access/fading-section-break.png")
+    no-repeat;
+}
+.im-sigin {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+}
+.inpt-cont {
+  border-radius: 5px;
+  box-shadow: 2px 2px 9px 3px rgb(0 0 0 / 20%);
+  padding: 15px;
+  background: #2c2f34;
+}
+.inpt-cont p {
+  position: relative;
+}
+
+.inp-imu {
+  font-family: inherit;
+  border: 1px solid transparent;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
+  background-color: #191919;
+  outline: 0;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  resize: none;
+  color: grey;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  height: 32px;
+  width: 320px;
+  background: #212121;
+  border-radius: 5px;
+}
+.inp-pass {
+  font-family: inherit;
+  border: 1px solid transparent;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 10%);
+  background-color: #191919;
+  outline: 0;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: 0.9em;
+  line-height: 1.5em;
+  resize: none;
+  color: grey;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+  height: 32px;
+  width: 263px;
+  background: #212121;
+  border-radius: 5px 0 0 5px;
+  margin: 0 !important;
+}
+.forgot {
+  color: #999;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 14px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  padding: 9px 10px;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+  background: #404040;
+  text-align: center;
+}
+.btns-imu {
+  margin-top: 15px;
+  color: #f2f2f2;
+}
+.btn-signin {
+  color: #f2f2f2;
+  text-decoration: none;
+  outline: 0;
+  user-select: none;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 2px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  background: #5c69ff;
+  border: none;
+  float: right;
+  padding: 10px 25px;
+}
+.need {
+  line-height: 37px;
+  margin-right: 15px;
+  float: right;
+  text-shadow: 1px 1px 0 rgb(0 0 0 / 80%);
+}
+.acc {
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+.signin-footer{
+  z-index: 2;
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+}
+.span{
+  text-shadow: 1px 1px 0 rgb(0 0 0 / 80%);
+  margin-right: 15px;
+}
+.span a{
+  color: #fff;
+  text-decoration: none;
+  opacity: .8;
+}
+.end{
+  margin: 0!important;
 }

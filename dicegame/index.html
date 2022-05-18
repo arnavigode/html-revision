@@ -36,7 +36,7 @@
       border-radius: 4px;
       color: #ffffff;
     }
-    #results {
+    #winner {
       width: 90%;
       margin: auto;
       text-align: center;
@@ -64,19 +64,19 @@
     <div class="container">
       <div id="app">
         <div>
-          <input id="player1" placeholder="Enter Player 1 Name" />
+          <input id="member-1" placeholder="Enter Player 1 Name" />
         </div>
         <div>
-          <input id="player2" placeholder="Enter Player 2 Name" />
+          <input id="member-2" placeholder="Enter Player 2 Name" />
         </div>
         <div>
-          <input id="player3" placeholder="Enter Player 3 Name" />
+          <input id="member-3" placeholder="Enter Player 3 Name" />
         </div>
         <button id="roll">Roll Dice</button>
       </div>
       <br />
       <br />
-      <div id="results"></div>
+      <div id="winner"></div>
       <div id="win"></div>
     </div>
   </body>
@@ -87,20 +87,19 @@
       const rollDice = () => getRandomNumber(1, 6);
 
       document.getElementById("roll").addEventListener("click", function () {
-        // fetch player names from the input fields
-        const player1 = document.getElementById("player1").value;
-        const player2 = document.getElementById("player2").value;
-        const player3 = document.getElementById("player3").value;
-        // roll dice for both players
-        const player1Score = rollDice();
-        const player2Score = rollDice();
-        const player3Score = rollDice();
-        // initialize empty string to store result
+        const member1 = document.getElementById("member-1").value;
+        const member2 = document.getElementById("member-2").value;
+        const member3 = document.getElementById("member-3").value;
+
+        const member1Score = rollDice();
+        const member2Score = rollDice();
+        const member3Score = rollDice();
+
         let result = "";
         let ans = [];
-        ans.push(player1Score);
-        ans.push(player2Score);
-        ans.push(player3Score);
+        ans.push(member1Score);
+        ans.push(member2Score);
+        ans.push(member3Score);
         console.log(ans);
         // ans.sort();
         var a = ans[0];
@@ -112,31 +111,31 @@
         }
         else if (a > b && a > c) {
           console.log(a);
-          winner = player1;
+          winner = member1;
         } else if (b > a && b > c) {
           console.log(b);
-          winner = player2;
+          winner = member2;
         } else{
           console.log(c);
-          winner = player3;
+          winner = member3;
         }
 
         // display the result on the page
-        document.getElementById("results").innerHTML = `
+        document.getElementById("winner").innerHTML = `
         <div class="showres">
           <div>
-          <p >${player1} </p>
+          <p >${member1} </p>
           <div class="score" id="one" >
-              <h1>${player1Score}</h1>
+              <h1>${member1Score}</h1>
               </div>
         </div>
         <div>
-          <p >${player2} </p>
-          <div class="score " id="two" ><h1>${player2Score}</h1></div>
+          <p >${member2} </p>
+          <div class="score " id="two" ><h1>${member2Score}</h1></div>
         </div>
         <div>
-          <p >${player3} </p>
-          <div class="score" id="three"><h1>${player3Score}</h1></div>
+          <p >${member3} </p>
+          <div class="score" id="three"><h1>${member3Score}</h1></div>
         </div>
           </div>
       </div>
@@ -145,13 +144,13 @@
 
     `;
     document.getElementById("win").innerHTML = `<h1 class="res">Winner is ${winner}🥳🥳🥳</h1>`
-    if(winner == player1){
+    if(winner == member1){
         console.log("one")
         document.getElementById("one").style.background ="green"
         document.getElementById("one").style.color ="white"
 
     }
-    else if(winner == player2){
+    else if(winner == member2){
         console.log("two")
         document.getElementById("two").style.background ="green"
         document.getElementById("two").style.color ="white"

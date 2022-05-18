@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Game</title>
+  </head>
+  <style>
+    .container {
+      width: 80%;
+      height: 400px;
+      margin: auto;
+      margin-top: 8%;
+      text-align: center;
+      border: 1px solid black;
+      padding: 40px;
+      background-color: #ffffff;
+      background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+    }
+    #app {
+      width: 90%;
+      margin: auto;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+    input {
+      width: 200px;
+    }
+    button {
+      width: 10%;
+      background-color: rgb(65, 83, 77);
+      border: transparent;
+      padding: 4px;
+      border-radius: 4px;
+      color: #ffffff;
+    }
+    #results {
+      width: 90%;
+      margin: auto;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+    .showres {
+      width: 90;
+      margin: auto;
+      display: flex;
+      gap: 20px;
+    }
+    .res {
+      color: rgb(79, 85, 45);
+    }
+    .score {
+      width: 100px;
+      height: 40px;
+      border: 1px solid black;
+      text-align: center;
+      padding: 60px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div id="app">
+        <div>
+          <input id="player1" placeholder="Enter Player 1 Name" />
+        </div>
+        <div>
+          <input id="player2" placeholder="Enter Player 2 Name" />
+        </div>
+        <div>
+          <input id="player3" placeholder="Enter Player 3 Name" />
+        </div>
+        <button id="roll">Roll Dice</button>
+      </div>
+      <br />
+      <br />
+      <div id="results"></div>
+      <div id="win"></div>
+    </div>
+  </body>
+  <script>
+      const getRandomNumber = (min, max) =>
+        Math.floor(Math.random() * (max - min + 1)) + min;
+
+      const rollDice = () => getRandomNumber(1, 6);
+
+      document.getElementById("roll").addEventListener("click", function () {
+        // fetch player names from the input fields
+        const player1 = document.getElementById("player1").value;
+        const player2 = document.getElementById("player2").value;
+        const player3 = document.getElementById("player3").value;
+        // roll dice for both players
+        const player1Score = rollDice();
+        const player2Score = rollDice();
+        const player3Score = rollDice();
+        // initialize empty string to store result
+        let result = "";
+        let ans = [];
+        ans.push(player1Score);
+        ans.push(player2Score);
+        ans.push(player3Score);
+        console.log(ans);
+        // ans.sort();
+        var a = ans[0];
+        var b = ans[1];
+        var c = ans[2];
+        var winner;
+        if(a == b && b ==c ){
+            winner = "Tie"
+        }
+        else if (a > b && a > c) {
+          console.log(a);
+          winner = player1;
+        } else if (b > a && b > c) {
+          console.log(b);
+          winner = player2;
+        } else{
+          console.log(c);
+          winner = player3;
+        }
+
+        // display the result on the page
+        document.getElementById("results").innerHTML = `
+        <div class="showres">
+          <div>
+          <p >${player1} </p>
+          <div class="score" id="one" >
+              <h1>${player1Score}</h1>
+              </div>
+        </div>
+        <div>
+          <p >${player2} </p>
+          <div class="score " id="two" ><h1>${player2Score}</h1></div>
+        </div>
+        <div>
+          <p >${player3} </p>
+          <div class="score" id="three"><h1>${player3Score}</h1></div>
+        </div>
+          </div>
+      </div>
+
+
+
+    `;
+    document.getElementById("win").innerHTML = `<h1 class="res">Winner is ${winner}🥳🥳🥳</h1>`
+    if(winner == player1){
+        console.log("one")
+        document.getElementById("one").style.background ="green"
+        document.getElementById("one").style.color ="white"
+
+    }
+    else if(winner == player2){
+        console.log("two")
+        document.getElementById("two").style.background ="green"
+        document.getElementById("two").style.color ="white"
+    }
+    else{
+        console.log("three")
+        document.getElementById("three").style.background ="green"
+        document.getElementById("three").style.color ="white"
+    }
+
+    if(b == a ){
+        console.log("1&2same")
+        document.getElementById("two").style.background ="blue"
+        document.getElementById("two").style.color ="white"
+        document.getElementById("one").style.background ="blue"
+        document.getElementById("one").style.color ="white"
+    }
+    else if(b == c ){
+        console.log("2&3same")
+        document.getElementById("two").style.background ="blue"
+        document.getElementById("two").style.color ="white"
+        document.getElementById("three").style.background ="blue"
+        document.getElementById("three").style.color ="white"
+    }
+    else if(c == a){
+        console.log("3&1same")
+        document.getElementById("three").style.background ="blue"
+        document.getElementById("three").style.color ="white"
+        document.getElementById("one").style.background ="blue"
+        document.getElementById("one").style.color ="white"
+      }
+      if(c == a && a == b){
+        console.log("all same")
+        document.getElementById("three").style.background ="blue"
+        document.getElementById("three").style.color ="white"
+        document.getElementById("one").style.background ="blue"
+        document.getElementById("one").style.color ="white"
+        document.getElementById("two").style.background ="blue"
+        document.getElementById("two").style.color ="white"
+      }
+      });
+  </script>
+</html>

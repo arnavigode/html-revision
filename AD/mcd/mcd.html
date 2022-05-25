@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="em">
+  <head>
+    <title>MacD</title>
+  </head>
+  <style>
+    .cont {
+      width: 60%;
+      margin: 0 auto;
+      border: 1px solid black;
+      margin-top: 90px;
+    }
+
+    #mac {
+      width: 50%;
+      margin: auto;
+    }
+    #img {
+      width: 50%;
+      margin: auto;
+    }
+    .img {
+      width: 40%;
+      margin: auto;
+    }
+  </style>
+  <body>
+    <h1>MacD Order</h1>
+    <input type="text" id="name" />
+    <select name="Burger" id="food">
+      <option value="Burger">Select Burger</option>
+      <option value="Burger">Veg Burger</option>
+      <option value="Burger">Ham Burger</option>
+    </select>
+
+    <button onclick="register()">ORDER</button>
+
+    <div id="order"></div>
+
+    <div class="cont">
+      <div id="mac"></div>
+      <div id="img"></div>
+    </div>
+  </body>
+  <!-- <script src="MacD.js"></script> -->
+  <script>
+    let queue = [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+      "A",
+      "B",
+      "C",
+      "D",
+      "E",
+    ];
+    function register() {
+      const name = document.getElementById("name").value;
+      const burger = document.getElementById("food").value;
+      queue.push(name);
+
+      let message = `${name} Order no: ${queue.length}`;
+
+      //   alert(message);
+      const main = document.getElementById("mac");
+      main.innerHTML = `
+        <div>
+            <h1> ${name} </h1>
+        </div>
+        
+        <div>
+        <h3>Order no: ${queue.length}</h3>
+        </div>
+        
+        <div>
+        <p> Your order for ${burger}  is being cooked</p>
+        </div>
+        `;
+      let promise = new Promise(function (resolve, reject) {
+        setInterval(function () {
+          if (queue[0] == name) {
+            resolve(name + " " + "Please take your order!");
+          }
+        }, 1000);
+      });
+
+      var idiv = document.getElementById("img");
+      idiv.innerHTML = `
+        <div id="imgshow" style=""></div>
+        `;
+      var im = document.getElementById("imgshow");
+      promise.then(function (res) {
+        // alert(res);
+        var idiv = document.getElementById("img");
+        idiv.innerHTML = `
+        <div id="imgshow" style="">
+            <img class="img" src="https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_21/2870431/190524-classic-american-cheeseburger-ew-207p.jpg"/>
+            </div>
+        `;
+      });
+    }
+    function startVaccination() {
+      queue.shift();
+      console.log("queue", queue);
+      var ord = document.getElementById("order");
+      ord.innerHTML = `
+        <h1> Your order will be out after  ${queue.length} </h1>
+    `;
+      if (queue.length == 0) {
+        clearInterval(interval);
+      }
+    }
+
+    var interval = setInterval(startVaccination, 5000);
+    startVaccination();
+  </script>
+</html>
